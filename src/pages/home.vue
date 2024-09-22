@@ -1,9 +1,7 @@
-<script setup lang="ts">
-const a = import.meta.env.VITE_TEST
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>Home : {{ a }} :</div>
+  <div>Home</div>
 </template>
 
 <style scoped lang="postcss"></style>
