@@ -52,9 +52,10 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            "VITE_PORT=${{ vars.VITE_PORT }}"
+            "VITE_PORT=${{ secrets.VITE_PORT }}"
             "VITE_API_BASE_URL=${{ vars.VITE_API_BASE_URL }}"
             "VITE_API_TIMEOUT=${{ vars.VITE_API_TIMEOUT }}"
+            "VITE_TEST=${{ vars.VITE_TEST }}"
 
   deploy:
     environment: staging
