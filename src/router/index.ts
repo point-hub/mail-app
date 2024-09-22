@@ -9,47 +9,15 @@ const router = createRouter({
       children: [
         {
           path: '',
-          redirect: '/app1a/home'
-        }
-      ]
-    },
-    {
-      path: '/app1a',
-      component: () => import('../layouts/app.vue'),
-      children: [
-        {
-          path: '',
-          redirect: '/app1a/home'
+          redirect: '/home'
         },
         {
           path: 'home',
-          component: () => import('@/pages/home.vue')
+          component: () => import('@/pages/home/index.vue')
         },
         {
-          path: 'api',
-          component: () => import('@/pages/api.vue')
-        },
-        {
-          path: 'nested/page-1',
-          component: () => import('@/pages/nested/page-1.vue')
-        },
-        {
-          path: 'nested/page-2',
-          component: () => import('@/pages/nested/page-2.vue')
-        }
-      ]
-    },
-    {
-      path: '/app1b',
-      component: () => import('../layouts/app.vue'),
-      children: [
-        {
-          path: '',
-          redirect: '/app1b/home'
-        },
-        {
-          path: 'home',
-          component: () => import('@/pages/home.vue')
+          path: 'mails/:id',
+          component: () => import('@/pages/mails/index.vue')
         }
       ]
     }
