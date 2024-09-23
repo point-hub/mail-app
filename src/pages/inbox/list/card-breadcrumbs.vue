@@ -3,7 +3,7 @@ import AppBreadcrumb from '@/components/app-breadcrumb.vue'
 
 const breadcrumbs = [
   {
-    name: 'Home'
+    name: 'Inbox'
   }
 ]
 </script>

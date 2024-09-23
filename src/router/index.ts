@@ -9,15 +9,15 @@ const router = createRouter({
       children: [
         {
           path: '',
-          redirect: '/home'
+          redirect: '/inbox'
         },
         {
-          path: 'home',
-          component: () => import('@/pages/home/index.vue')
+          path: 'inbox',
+          component: () => import('@/pages/inbox/list/index.vue')
         },
         {
-          path: 'mails/:id',
-          component: () => import('@/pages/mails/index.vue')
+          path: 'inbox/:id',
+          component: () => import('@/pages/inbox/detail/index.vue')
         }
       ]
     }

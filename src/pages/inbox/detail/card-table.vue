@@ -13,19 +13,6 @@ onMounted(async () => {
   // call api
   const response = await getMailApi.send(route.params.id as string)
   mail.value = response
-
-  var iFrame = document.getElementById('iframe')
-  resizeIFrameToFitContent(iFrame)
-})
-
-function resizeIFrameToFitContent(iFrame: any) {
-  iFrame.width = iFrame.contentWindow.document.body.scrollWidth
-  iFrame.height = iFrame.contentWindow.document.body.scrollHeight
-}
-
-window.addEventListener('DOMContentLoaded', function (e) {
-  var iFrame = document.getElementById('iframe')
-  resizeIFrameToFitContent(iFrame)
 })
 </script>
 

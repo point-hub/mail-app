@@ -124,38 +124,38 @@ onMounted(async () => {
     <template #header>Mails</template>
 
     <div class="my-5 flex gap-2">
-      <base-input v-model="searchAll" placeholder="Search..." border="full" class="w-full" />
+      <!-- <base-input v-model="searchAll" placeholder="Search..." border="full" class="w-full" /> -->
     </div>
     <div class="flex flex-col gap-4">
       <base-table>
         <thead>
           <tr>
             <th class="w-1"></th>
-            <th>Created Date</th>
-            <th>To</th>
+            <th class="w-50">Created Date</th>
+            <th class="w-50">To</th>
             <th>Subject</th>
           </tr>
           <tr class="bg-slate-50 dark:bg-slate-700">
             <th></th>
             <th class="basic-table-head">
-              <base-input
+              <!-- <base-input
                 required
                 v-model="search.created_date"
                 placeholder="Search"
                 border="none"
-              />
+              /> -->
             </th>
             <th class="basic-table-head">
-              <base-input required v-model="search.to" placeholder="Search" border="none" />
+              <!-- <base-input required v-model="search.to" placeholder="Search" border="none" /> -->
             </th>
             <th class="basic-table-head">
-              <base-input required v-model="search.subject" placeholder="Search" border="none" />
+              <!-- <base-input required v-model="search.subject" placeholder="Search" border="none" /> -->
             </th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="isLoading">
-            <td colspan="5">
+            <td colspan="4">
               <p class="w-full h-32 flex items-center justify-center gap-2 text-center text-xl">
                 <base-spinner color="primary" size="xs" /> <span>Loading</span>
               </p>
@@ -171,7 +171,7 @@ onMounted(async () => {
                   <template #content>
                     <base-card class="py-1! px-2! text-sm">
                       <div class="flex flex-col">
-                        <router-link :to="`/mails/${mail._id}`">
+                        <router-link :to="`/inbox/${mail._id}`">
                           <base-button variant="text" color="info">
                             <div class="flex gap-2 w-full">
                               <base-icon class="text-xl" icon="i-ph-eye"></base-icon>
@@ -188,7 +188,7 @@ onMounted(async () => {
               <td>{{ format(new Date(mail.created_date), 'dd-MM-yyyy') }}</td>
               <td>{{ mail.to }}</td>
               <td>
-                <router-link :to="`/mails/${mail._id}`" class="text-blue">
+                <router-link :to="`/inbox/${mail._id}`" class="text-blue">
                   {{ mail.subject }}
                 </router-link>
               </td>

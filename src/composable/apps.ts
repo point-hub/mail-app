@@ -5,7 +5,7 @@ export const apps: IApps[] = [
     icon: 'https://assets.pointhub.net/assets/images/logo/primary/icon-rounded.png',
     menu: [
       {
-        name: 'Home',
+        name: 'Inbox',
         path: '/'
       }
     ]
