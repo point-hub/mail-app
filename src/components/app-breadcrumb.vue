@@ -1,9 +1,9 @@
 <script setup lang="ts">
-interface IProps {
+export interface IBreadcrumb {
   breadcrumbs: { name: string; path?: string }[]
 }
 
-const props = defineProps<IProps>()
+const props = defineProps<IBreadcrumb>()
 </script>
 
 <template>
