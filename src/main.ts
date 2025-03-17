@@ -10,10 +10,11 @@ import { createApp } from 'vue'
 import MainApp from './main-app.vue'
 import router from './router'
 
+const pinia = createPinia()
 const app = createApp(MainApp)
 
+app.use(pinia)
 app.use(router)
-app.use(createPinia())
 
 app.use(PluginInputMask)
 app.use(PluginTooltip)

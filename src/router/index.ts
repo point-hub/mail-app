@@ -9,23 +9,15 @@ const router = createRouter({
       children: [
         {
           path: '',
-          redirect: '/home'
+          redirect: '/inbox'
         },
         {
-          path: 'home',
-          component: () => import('@/pages/home.vue')
+          path: 'inbox',
+          component: () => import('@/pages/inbox/list/index.vue')
         },
         {
-          path: 'api',
-          component: () => import('@/pages/api.vue')
-        },
-        {
-          path: 'nested/page-1',
-          component: () => import('@/pages/nested/page-1.vue')
-        },
-        {
-          path: 'nested/page-2',
-          component: () => import('@/pages/nested/page-2.vue')
+          path: 'inbox/:id',
+          component: () => import('@/pages/inbox/detail/index.vue')
         }
       ]
     },
