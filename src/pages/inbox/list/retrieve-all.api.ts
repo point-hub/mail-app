@@ -2,7 +2,7 @@ import axios from '@/axios'
 
 interface ISearch {
   all: string
-  created_date: string
+  created_at: string
   to: string
   subject: string
 }

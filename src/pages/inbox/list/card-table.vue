@@ -12,14 +12,14 @@ const getMailsApi = useGetMailsApi()
 
 interface IMail {
   _id: string
-  created_date: string
+  created_at: string
   to: string
   subject: string
 }
 
 const searchAll = ref('')
 const search = ref({
-  created_date: '',
+  created_at: '',
   to: '',
   subject: ''
 })
@@ -38,7 +38,7 @@ const updateRouter = () => {
     query: {
       search: searchAll.value,
       page: pagination.value.page,
-      'search.created_date': search.value.created_date,
+      'search.created_at': search.value.created_at,
       'search.to': search.value.to,
       'search.subject': search.value.subject
     }
@@ -105,7 +105,7 @@ const onPageUpdate = async () => {
 onMounted(async () => {
   // set default value
   searchAll.value = route.query.search?.toString() ?? ''
-  search.value.created_date = route.query['search.created_date']?.toString() ?? ''
+  search.value.created_at = route.query['search.created_at']?.toString() ?? ''
   search.value.to = route.query['search.to']?.toString() ?? ''
   search.value.subject = route.query['search.subject']?.toString() ?? ''
   pagination.value.page = Number(route.query.page ?? 1)
@@ -167,7 +167,7 @@ onMounted(async () => {
                   </template>
                 </base-popover>
               </td>
-              <td>{{ format(new Date(mail.created_date), 'dd-MM-yyyy HH:mm') }}</td>
+              <td>{{ format(new Date(mail.created_at), 'dd-MM-yyyy HH:mm') }}</td>
               <td>{{ mail.to }}</td>
               <td>
                 <router-link :to="`/inbox/${mail._id}`" class="text-blue">
