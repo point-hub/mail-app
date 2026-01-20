@@ -17,6 +17,10 @@ interface IMail {
   subject: string
 }
 
+if (window.location.hostname === 'mail.pointhub.net') {
+  await router.push('404')
+}
+
 const searchAll = ref('')
 const search = ref({
   created_at: '',
@@ -178,13 +182,8 @@ onMounted(async () => {
           </template>
         </tbody>
       </base-table>
-      <base-pagination
-        v-if="!isLoading"
-        v-model="pagination.page"
-        :page-size="pagination.page_size"
-        :total-document="pagination.total_document"
-        @update:model-value="onPageUpdate()"
-      />
+      <base-pagination v-if="!isLoading" v-model="pagination.page" :page-size="pagination.page_size"
+        :total-document="pagination.total_document" @update:model-value="onPageUpdate()" />
     </div>
   </base-card>
 </template>
